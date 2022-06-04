@@ -3,19 +3,20 @@ import {getGifs} from '../helpers/getGifs'
 
 export const useGetGifs = (valorBusqueda) => {
     const [estado, setEstado] = useState({
-        gif: [],
+        gifs: [],
         cargando: true
     })
 
     useEffect(()=>{
-        getGifs(valorBusqueda)
-        .then(gifs =>{
-            setEstado({
-                gifs: gifs,
-                cargando: false,
-            })
-        })
-    })
+        setTimeout(()=>
+            getGifs(valorBusqueda)
+            .then(gifs =>{
+                setEstado({
+                    gifs: gifs,
+                    cargando: false,
+                });
+        }), 5)
+    }, [valorBusqueda])
     return estado;
 }
 

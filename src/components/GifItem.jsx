@@ -1,10 +1,9 @@
 import React from 'react'
 
-const GifItem = ({tittle, url}) => {
+const GifItem = ({title, url}) => {
   return (
-    <div>
-        <img src= {url} alt = {tittle}/>
-        <p>{tittle}</p>
+    <div className='card animate__animated animate__bounce'>
+        <img src= {url} alt = {title}/>
     </div>
   )
 }
